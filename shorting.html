@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Check</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .form-control {
+            margin-top: 30px;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            border-color: #CB236E;
+            box-shadow: 0 0 5px #CB236E;
+        }
+        .btn {
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #CB236E;
+            color: #ffffff;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Mohon Isi Password untuk Melanjutkan Melihat Nilai Algoritma Pengurutan (Shorting)</h3>
+        <div class="form-group">
+            <input type="password" id="password" class="form-control" placeholder="Masukkan password . . .">
+        </div>
+        <button class="btn" onclick="checkPassword()">Submit</button>
+        <div id="error-message" class="error-message"></div>
+    </div>
 
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            if (password === 'guru123') {
+                window.location.href = 'https://docs.google.com/spreadsheets/d/1DM-rsdOVI1BEW4EFegwU2slfmwmajTa6wS_Q_r7TY10/edit?usp=sharing';
+            } else {
+                errorMessage.textContent = 'Password yang dimasukkan salah.';
+            }
+        }
+    </script>
+</body>
+</html>
